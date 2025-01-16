@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/pokedex.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+    <div class="seccion-pokedex">
+        <h1 id="tituloPokedex">Pokedex</h1>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" >
+                <div id="modal-dialog-info" class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Información de</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="info-pokemon">
+                            <div id="img-pokemon-info"></div>
+                            <div id="stats-info">
+                                <h5 class="label-stat">Ps</h5>
+                                <div class="progress" role="progressbar"  aria-label="Animated striped example"  aria-valuemin="0" aria-valuemax="255">
+                                    <div id="ps-bar" class="progress-bar progress-bar-striped progress-bar-animated" ></div>
+                                </div>
+                                <h5 class="label-stat">Attack</h5>
+                                <div class="progress" role="progressbar"  aria-label="Animated striped example" aria-valuemin="0" aria-valuemax="134">
+                                    <div id="attack-bar" class="progress-bar progress-bar-striped progress-bar-animated" ></div>
+                                </div>
+                                <h5 class="label-stat">Defense</h5>
+                                <div class="progress" role="progressbar"  aria-label="Animated striped example" aria-valuemin="0" aria-valuemax="180">
+                                    <div id="defense-bar" class="progress-bar progress-bar-striped progress-bar-animated" ></div>
+                                </div>
+                                <h5 class="label-stat">Special Attack</h5>
+                                <div class="progress" role="progressbar"  aria-label="Animated striped example" aria-valuemin="0" aria-valuemax="135">
+                                    <div id="special-attack-bar" class="progress-bar progress-bar-striped progress-bar-animated" ></div>
+                                </div>
+                                <h5 class="label-stat">Special Defense</h5>
+                                <div class="progress" role="progressbar"  aria-label="Animated striped example" aria-valuemin="0" aria-valuemax="115">
+                                    <div id="special-defense-bar" class="progress-bar progress-bar-striped progress-bar-animated" ></div>
+                                </div>
+                                <h5 class="label-stat">Speed</h5>
+                                <div class="progress" role="progressbar"  aria-label="Animated striped example" aria-valuemin="0" aria-valuemax="140">
+                                    <div id="speed-bar" class="progress-bar progress-bar-striped progress-bar-animated" ></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="filtros-container">
+            <div id="search">
+                <form action="" class="search-bar">
+                    <input type="text" name="" id="search-pokemon" placeholder="Buscar Pokemon">
+                    <button type="submit" id="btn-search"><span class="iconify"
+                            data-icon="material-symbols:search"></span></button>
+                </form>
+            </div>
+        </div>
+
+        <div id="cards-container">
+
+        </div>
+        <div id="sentry"></div>
+    </div>
+
+    <script src="../js/scripts.js"></script>
+    <script src="../js/pokedex.js"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
+
+:root {
+    --dark-color-seccion: rgb(62, 77, 117);
+    --dark-color: rgb(45, 45, 46);
+}
+
+
+#nav-pokedex {
+    color: var(--red-color);
+}
+
+.seccion-pokedex {
+    width: 90%;
+    background-color: white;
+    margin-top: 40px;
+    /* Aumenta el margen superior para mayor separación */
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    border-bottom: 5%;
+}
+
+#cards-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 0.5em;
+    padding: 20px 0;
+}
+
+.pokemon-card {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 10px;
+    background-color: rgb(34, 34, 34);
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    margin: 15px 0px;
+    margin: 15px 0px;
+    transition: transform 0.3s; /* Agrega una transición suave al transform */
+}
+.pokemon-card:hover{
+    outline: 2px solid rgb(44, 44, 44); /* Cambia el color y grosor del borde al pasar el ratón */
+    transform: translateY(-10px);
+}
+
+body.darkmode .pokemon-card:hover{
+    outline: 2px solid rgb(0, 0, 0); /* Cambia el color y grosor del borde al pasar el ratón */
+    transform: translateY(-10px);
+}
+
+
+
+.container-img-pk {
+    background-color: rgba(241, 241, 241, 0.747);
+    background-size: cover;
+    border-radius: 8px;
+    padding-bottom: 5px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.container-img-pk img {
+    width: 80px;
+}
+
+.card-container-name {
+    padding: 0;
+    padding-top: 5px;
+    display: block;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    top: -10px;
+}
+
+.card-container-name h2 {
+    display: inline-block;
+    width: 90%;
+    text-transform: capitalize;
+    text-align: center;
+    border-radius: 5px;
+    padding: 4px 5px;
+    margin: 0;
+    overflow: hidden;
+    /* Evita que el texto rebase el contenedor */
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    font-size: 8px;
+    word-wrap: break-word;
+    background-color: rgb(77, 77, 77);
+    color: white;
+   
+}
+
+
+.card-tipos {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+    font-size: 7px;
+    top: -5px;
+}
+
+.card-tipos span {
+    text-transform: capitalize;
+    text-align: center;
+    padding: 1px 8px;
+    border-radius: 5px;
+    color: rgb(48, 48, 48);
+    font-weight: 500;
+    box-shadow: 0.6px 0.6px 0.6px rgba(54, 54, 54, 0.8);
+}
+
+#tituloPokedex {
+    font-family: 'Fascinate', cursive;
+    font-size: 30px;
+    background-color: var(--red-color);
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    color: rgba(255, 255, 255, 0.863); /* Cambia el color del texto a naranja */
+}
+
+/* darkmode */
+body.darkmode .seccion-pokedex {
+    background-color: var(--dark-color-seccion);
+}
+
+
+body.darkmode #tituloPokedex {
+    background-color: var(--dark-color);
+}
+
+#search {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    padding: 4px 4px;
+    background: rgba(255, 192, 203, 0.63);
+    border-radius: 25px;
+    backdrop-filter: blur(4px) saturate(100%);
+}
+
+.search-bar input{
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 4px 16px;
+    font-size: 15px;
+}
+
+.search-bar button {
+    border: 0;
+    outline: none;
+    border-radius: 50%;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    background: rgb(243, 71, 71);
+}
+
+.search-bar button:hover {
+    background: rgb(253, 111, 111);
+}
+
+body.darkmode .search-bar button{
+    background: rgb(98, 133, 228)
+}
+
+body.darkmode .search-bar button:hover{
+    background: rgb(117, 154, 255)
+}
+
+body.darkmode .search-bar {
+    background: #83c5be
+}
+
+/* modal info pokemon */
+/* #modal-dialog-info {
+    width: 600px;
+} */
+
+.modal-header h1{
+    margin-left: 30px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#info-pokemon {
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    padding: 30px;
+    position: relative;
+}
+
+#img-pokemon-info {
+    border: 1px solid black;
+    background: rgb(231, 231, 231);
+    width: 50%;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#img-pokemon-info img{
+    width: 100%;
+}
+#stats-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40%;
+}
+
+
+.label-stat{
+    font-size: 15px;
+    
+}
+
+#ps-bar {
+    background-color: rgb(0, 204, 0);
+}
+
+#attack-bar{
+    background-color: red;
+}
+
+#special-attack-bar {
+    background-color: blueviolet;
+}
+
+#special-defense-bar {
+    background-color: rgb(94, 177, 255);
+}
+
+#speed-bar {
+    background-color: orangered;
+}
+
+@media screen and (min-width:230px) {
+    #cards-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width:370px) {
+    #cards-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
+@media screen and (min-width: 576px) {
+
+    .search-bar {
+        padding: 8px 10px;
+    }
+    
+    .search-bar input{
+        padding: 8px 30px;
+        font-size: 18px;
+    }
+    
+    .search-bar button {
+        font-size: 20px;
+        padding: 10px;
+    }
+    
+/* ----------*/
+
+    #tituloPokedex {
+
+        font-size: 36px;
+     
+    }
+    
+    .container-img-pk {
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 15px;
+    }
+    #cards-container {
+        grid-template-columns: 1fr 1fr ;
+    }
+    
+    .pokemon-card {
+        /* Para acomodar al inicio el nombre */
+        align-items: flex-start; 
+        padding: 15px;
+        border-radius: 16px;
+    }
+
+    .card-container-name h2 {
+        display: block;
+        font-size: medium;
+        padding: 8px;
+        letter-spacing: 0;
+        width: 100%;
+    }
+    
+    .card-container-name {
+        padding-right: 10px;
+        padding-top: 10px;
+        top: -25px;
+        max-width: 75%;
+        min-width: 70%;
+        border-top-right-radius: 5px;
+    }
+
+    .container-img-pk {
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-bottom: 10px;
+    }
+   
+    
+    .container-img-pk img {
+        width: 160px;
+    }
+    
+    .card-tipos {
+        font-size: 15px;
+        
+    }
+   
+    .card-tipos span {
+        /* width: 80px; */
+        padding: 1px 15px;
+    }
+}
+
+@media screen and (min-width: 768px)  {
+}
+
+@media screen and (min-width: 992px)  {
+    #cards-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .container-img-pk img {
+        width: 200px;
+    }
+}
+
+@media (min-width: 1400px) {
+    #cards-container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+}

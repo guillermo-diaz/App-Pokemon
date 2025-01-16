@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
+:root {
+    --dark-color-seccion: rgb(62, 77, 117);
+    --text-color: #7ddfee;
+    --color-primary-hover: #83c5be;
+    --color-primary: #006d77;
+    --red-color:rgb(236, 82, 82);
+    --pink-color: rgb(255, 192, 203);
+  
+
+    --grass-color: #bfe487;
+    --poison-color: rgb(247, 125, 228);
+    --fire-color: rgb(243, 154, 53);
+    --water-color: lightblue;
+    --bug-color: #a4d96b;
+    --normal-color: rgb(214, 205, 205);
+    --electric-color: rgb(247, 247, 143);
+    --ground-color: rgb(201, 191, 104);
+    --psychic-color: rgb(233, 190, 197);
+    --rock-color: #ceb33a;
+    --fighting-color: #e8b698;
+    --ghost-color: #d0a5d3;
+    --ice-color: #c9f5f1;
+    --fairy-color: #fdcfef;
+    --steel-color: #aac6c7;
+    --dragon-color: linear-gradient(to bottom, #8e61f8, #bea6f5);
+    --flying-color: linear-gradient(to top, #9b9a9a, #bebebe);
+
+}
+
+#nav-build {
+    color: var(--red-color);
+}
+
+
+body.darkmode .build-team{
+    background-color: var(--dark-color-seccion);
+    width: 100%;
+   
+}
+
+.build-team{
+    background-color:aliceblue;
+    width: 100%;
+  
+}
+
+.grid-pokemon{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 0.5em;
+    padding: 20px 0;
+}
+
+
+body.darkmode .grid-pokemon td{
+    border: none; 
+    display: flex;
+    padding: 10px; 
+    border-radius: 10px; 
+    background-color: rgb(81, 149, 209);
+    width: 215px;
+    height:     215px;
+}
+
+.build-team form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.form-group{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+    padding: 15px 20px;
+    border-radius: 25px;
+   margin-top: 20px;
+   background-color: var(--pink-color);
+}
+
+body.darkmode .form-group{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+    padding: 15px 20px;
+    border-radius: 25px;
+   margin-top: 20px;
+   background-color: var(--color-primary-hover);
+}
+
+
+.form-group input{
+    font-family: inherit;
+    width: 300px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background-color: var(--pink-color);
+    
+     
+
+}
+
+body.darkmode .form-group input{
+    font-family: inherit;
+    width: 300px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background-color: var(--color-primary-hover);
+    
+     
+
+}
+
+
+.btn-search{
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-family: inherit;
+    padding: 15px 30px;/*separar el el texto de los bordes*/
+    cursor: pointer;
+    letter-spacing: 2px;
+    background-color: var(--red-color);
+    color: #fff;
+}
+
+
+body.darkmode .btn-search{
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-family: inherit;
+    padding: 15px 30px;/*separar el el texto de los bordes*/
+    cursor: pointer;
+    letter-spacing: 2px;
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+
+.btn-search:hover{
+    background-color: var(--pink-color);
+    color: #000;
+}
+
+body.darkmode .btn-search:hover{
+    background-color: var(--color-primary-hover);
+    color: #000;
+}
+
+
+.grid-pokemon td {
+    position: relative;
+    border: none; 
+    border-radius: 10px; 
+    background-color: rgb(199, 216, 231);
+    width: 235px;
+    height:     235px;
+}
+
+body.darkmode #btn-eliminar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--color-primary); 
+    color: #ffffff; 
+    border: none;
+    width: 35px; /* Ajusta el ancho según tus necesidades */
+    height: 35px; /* Ajusta el alto según tus necesidades */
+    border-radius: 50%; /* Hace que el botón sea redondeado */
+    padding: 5px; 
+    margin: 2px;
+    cursor: pointer;
+}
+
+#btn-eliminar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--red-color); 
+    color: #ffffff; 
+    border: none;
+    width: 35px; /* Ajusta el ancho según tus necesidades */
+    height: 35px; /* Ajusta el alto según tus necesidades */
+    border-radius: 50%; /* Hace que el botón sea redondeado */
+    padding: 5px; 
+    margin: 2px;
+    cursor: pointer;
+}
+
+.grid-pokemon {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 0.5em;
+    padding: 20px 0;
+}
+
+
+#tablaDebilidades {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  #tablaDebilidades th, #tablaDebilidades td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  #tablaDebilidades th {
+    background-color: #f2f2f2;
+  }
+
+
+@media screen and (min-width: 992px)  {
+    .grid-pokemon {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (min-width: 1400px) {
+    .grid-pokemon {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+}
