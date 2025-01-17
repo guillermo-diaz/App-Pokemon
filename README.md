@@ -1,6 +1,6 @@
 # Proyecto Pokémon - Aplicación React Native con Expo 🚀
 
-¡Bienvenido al proyecto Pokémon! 🎮 Esta es una aplicación móvil desarrollada con **React Native** y **Expo**, que permite a los usuarios explorar diferentes pantallas relacionadas con Pokémon. Descubre, agrega, y guarda tus Pokémon favoritos mientras disfrutas de una interfaz intuitiva y atractiva.
+Texto..............
 
 ---
 
