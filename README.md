@@ -48,7 +48,7 @@ Clona este repositorio a tu máquina local con el siguiente comando:
 
 ```bash
 git clone https://github.com/guillermo-diaz/App-Pokemon.git
-cd /mobile
+cd .\App-Pokemon\mobile\
 ```
 
 ### 2. Instalar Dependencias
@@ -58,8 +58,16 @@ Una vez dentro del directorio del proyecto, instala las dependencias necesarias:
 ```bash
 npm install
 ```
+### 3. Configurar React Navigation y sus Dependencias
 
-### 3. Iniciar el Proyecto
+Instala las dependencias necesarias para React Navigation:
+
+```bash
+npm install @react-navigation/native @react-navigation/bottom-tabs
+npm install react-native-screens react-native-safe-area-context react-native-gesture-handler react-native-reanimated react-native-vector-icons
+```
+
+### 4. Iniciar el Proyecto
 
 Después de instalar las dependencias, inicia el proyecto con:
 
@@ -68,6 +76,7 @@ npx expo start
 ```
 
 Este comando abrirá tu navegador y generará un código QR. Escanea el código con la aplicación **Expo Go** para visualizar la aplicación en tu dispositivo móvil.
+
 
 
 
