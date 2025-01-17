@@ -47,7 +47,7 @@ Sigue estos pasos para configurar y ejecutar el proyecto en tu entorno local:
 Clona este repositorio a tu máquina local con el siguiente comando:
 
 ```bash
-git clone https://github.com/tu-usuario/proyecto-pokemon.git](https://github.com/guillermo-diaz/App-Pokemon.git
+git clone https://github.com/guillermo-diaz/App-Pokemon.git
 cd /mobile
 ```
 
