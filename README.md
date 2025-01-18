@@ -48,7 +48,6 @@ Clona este repositorio a tu máquina local con el siguiente comando:
 
 ```bash
 git clone https://github.com/guillermo-diaz/App-Pokemon.git
-cd .\App-Pokemon\mobile\
 ```
 
 ### 2. Instalar Dependencias
@@ -59,7 +58,15 @@ Una vez dentro del directorio del proyecto (en la carpeta raiz), instala las dep
 npm i
 ```
 
-### 3. Iniciar el Proyecto
+### 3. Configurar IP
+
+Ir a App-Pokemon/mobile/src/config/config.js y reemplazar por la IP de tu WIFI
+
+```bash
+IP: 'Your IP'
+```
+
+### 4. Iniciar el Proyecto
 
 Después de instalar las dependencias, moverte a la carpeta /mobile y iniciar el proyecto con:
 
