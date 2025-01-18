@@ -66,9 +66,17 @@ Ir a App-Pokemon/mobile/src/config/config.js y reemplazar por la IP de tu WIFI
 IP: 'Your IP'
 ```
 
-### 4. Iniciar el Proyecto
+### 4. Iniciar servidor Node js
 
-Después de instalar las dependencias, moverte a la carpeta /mobile y iniciar el proyecto con:
+Moverte a la carpeta App-Pokemon/web e iniciar el servidor (Para que funcione la API) con el siguiente comando:
+
+```bash
+npm start
+```
+
+### 5. Iniciar el Proyecto
+
+Con el servidor Node js prendido, tenemos que abrir otra consola, movernos a la carpeta App-Pokemon/mobile y iniciar el proyecto con:
 
 ```bash
 npm start
