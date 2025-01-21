@@ -2,6 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 
+//pages
 import Home from '../Pages/Home/Home';
 import Pokedex from '../Pages/Pokedex/Pokedex';
 import AddPokemon from '../Pages/AddPokemon/AddPokemon';

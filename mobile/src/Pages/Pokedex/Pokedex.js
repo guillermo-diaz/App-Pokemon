@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, StyleSheet, ActivityIndicator } from "react-native";
+import { View, Text, StyleSheet, ActivityIndicator, FlatList } from "react-native";
 import { getPokemons } from "../../Services/API";
 import Card from "../../Components/Card/Card";
 
@@ -11,14 +11,13 @@ export default function Pokedex() {
   const fetchPokemons = async () => {
     try {
       const page = 1; // Página inicial
-      const limit = 3; // Límite de Pokémon a obtener
+      const limit = 6; // Límite de Pokémon a obtener
       const data = await getPokemons(page, limit); // Llamada a la API
       setPokemons(data.results); // Guarda los resultados en el estado
-      console.log(data.results);
     } catch (error) {
       console.log("Error al obtener los Pokémon: ", error.message);
     } finally {
-      setLoading(false); // Desactiva el indicador dre carga
+      setLoading(false); // Desactiva el indicador de carga
     }
   };
 
@@ -27,21 +26,22 @@ export default function Pokedex() {
     fetchPokemons();
   }, []);
 
+  const renderPokemon = ({ item }) => (
+    <Card name={item.nombre} number={item.id} />
+  );
+
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Lista de Pokémon</Text>
       {loading ? (
         <ActivityIndicator size="large" color="#FF4500" /> // Indicador de carga
       ) : (
-        <View style={styles.cardContainer}>
-          {pokemons.map((pokemon, index) => (
-            <Card
-              key={index}
-              name={pokemon.nombre}
-              number={pokemon.id}
-            />
-          ))}
-        </View>
+        <FlatList
+          data={pokemons}
+          renderItem={renderPokemon}
+          keyExtractor={(item) => item.id.toString()}
+          contentContainerStyle={styles.cardContainer} // Estilo para los elementos
+        />
       )}
     </View>
   );
@@ -51,9 +51,9 @@ const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: "center", alignItems: "center" },
   text: { fontSize: 20, color: "#333", marginBottom: 20 },
   cardContainer: {
-    width: "100%",
+    paddingBottom: 20, // Espaciado inferior
     alignItems: "center",
-    gap: 15, // Espaciado entre las tarjetas
   },
 });
+
 
