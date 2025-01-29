@@ -1,19 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { View, Text, StyleSheet, ActivityIndicator, FlatList } from "react-native";
 import { getPokemons } from "../../Services/API";
 import Card from "../../Components/Card/Card";
+import styles from "./Styles";
 
 export default function Pokedex() {
   const [pokemons, setPokemons] = useState([]); // Almacena la lista de Pokémon
   const [loading, setLoading] = useState(true); // Indica si los datos están cargando
-
-  // Función para obtener los Pokémon de la API
-  const fetchPokemons = async () => {
+  const [page, setPage] = useState(1);
+  const nextPage = useRef(); // Referencia para la próxima página
+  const limit = 6; 
+  
+  const getPokemonsData = async () => {
     try {
-      const page = 1; // Página inicial
-      const limit = 6; // Límite de Pokémon a obtener
-      const data = await getPokemons(page, limit); // Llamada a la API
-      setPokemons(data.results); // Guarda los resultados en el estado
+      setLoading(true);
+      const data = await getPokemons(page, limit); 
+      setPokemons([...pokemons, ...data.results]);
+
+      // Determina si hay una página siguiente
+      console.log("pagina "+data.next.page)
+      if (data.next) {
+        nextPage.current = data.next.page;
+      } else {
+        nextPage.current = null;
+      }
     } catch (error) {
       console.log("Error al obtener los Pokémon: ", error.message);
     } finally {
@@ -21,39 +31,39 @@ export default function Pokedex() {
     }
   };
 
-  // Llama a fetchPokemons cuando el componente se monta
-  useEffect(() => {
-    fetchPokemons();
-  }, []);
+  const fetchNextPokemonPage = () => {
 
-  const renderPokemon = ({ item }) => (
-    <Card name={item.nombre} number={item.id} />
-  );
+    console.log("entro "+nextPage.current)
+    if (nextPage.current) {
+      setPage(nextPage.current);
+    }
+  };
+
+  // Efecto para cargar los Pokémon al inicializar o cuando cambia la página
+  useEffect(() => {
+    getPokemonsData();
+  }, [page]);
+
+
+
+
 
   return (
-    <View style={styles.container}>
+     <View style={styles.container}>
       <Text style={styles.text}>Lista de Pokémon</Text>
-      {loading ? (
-        <ActivityIndicator size="large" color="#FF4500" /> // Indicador de carga
-      ) : (
-        <FlatList
-          data={pokemons}
-          renderItem={renderPokemon}
-          keyExtractor={(item) => item.id.toString()}
-          contentContainerStyle={styles.cardContainer} // Estilo para los elementos
-        />
-      )}
+      <FlatList
+        data={pokemons}
+        renderItem={({ item }) => (
+          <Card name={item.nombre} number={item.id} />
+        )}
+        keyExtractor={(item) => item.id.toString()}
+        contentContainerStyle={styles.cardContainer}
+        onEndReachedThreshold={0.6}
+        onEndReached={fetchNextPokemonPage}
+      />
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: "center", alignItems: "center" },
-  text: { fontSize: 20, color: "#333", marginBottom: 20 },
-  cardContainer: {
-    paddingBottom: 20, // Espaciado inferior
-    alignItems: "center",
-  },
-});
 
 

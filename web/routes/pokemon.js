@@ -8,19 +8,30 @@ router.get('/', (req, res) => {
     
     let results = {};
     
-    if (isNaN(page) || isNaN(limit) || page <= 0 || limit <= 0){
-        return res.status(400).json({ error: 'Indices incorrectos.' });
-    } else {
-        const startIndex = (page - 1) * limit;
-        const endIndex = page * limit;
-        if (startIndex < pokemons.length) {
-            results.results = pokemons.slice(startIndex, endIndex);
-        } 
-        
-        res.json(results);
-    }
+    if (isNaN(page) || isNaN(limit) || page <= 0 || limit <= 0) {
+        return res.status(400).json({ error: 'Índices incorrectos.' });
+    } 
+    
+    const startIndex = (page - 1) * limit;
+    const endIndex = page * limit;
 
+    if (startIndex < pokemons.length) {
+        results.results = pokemons.slice(startIndex, endIndex);
+
+        // Si todavía hay más Pokémon después del endIndex, añade nextPage
+        if (endIndex < pokemons.length) {
+            results.next = { page: page + 1 };
+        } else {
+            results.next = null; // No hay más páginas
+        }
+    } else {
+        results.results = []; // No hay más datos en esa página
+        results.next = null;
+    }
+    
+    res.json(results);
 });
+
 
 //buscar por nombre
 router.get('/:nombrePokemon', (req, res) => {
