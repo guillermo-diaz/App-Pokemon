@@ -52,7 +52,7 @@ git clone https://github.com/guillermo-diaz/App-Pokemon.git
 
 ### 2. Instalar Dependencias
 
-Una vez dentro del directorio del proyecto (en la carpeta raiz), instala las dependencias con:
+Una vez dentro del directorio del proyecto en App-Pokemon/web y también en App-Pokemon/mobile, instala las dependencias con:
 
 ```bash
 npm i
