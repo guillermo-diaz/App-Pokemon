@@ -1,5 +1,5 @@
 const CONFIG = {
-    IP: 'Your IP', // IP DEL WIFI
+    IP: 'IP', // IP DEL WIFI
     PORT: 3000,
   };
   

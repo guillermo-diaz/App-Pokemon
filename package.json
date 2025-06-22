@@ -1,8 +1,0 @@
-{
-    "name": "app-pokemon",
-    "private": true,
-    "workspaces": [
-      "web",
-      "mobile"
-    ]
-  }
